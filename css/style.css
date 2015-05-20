@@ -1,0 +1,55 @@
+.writing {
+	background: url(../img/table-notes.png) repeat-x;
+	width: 700px;
+	margin: 200px auto;
+	height: 95px;	
+}
+
+.symbol {
+	background: url(../img/symbol.png) no-repeat;
+	width: 80px;
+	height: 135px;
+	display: inline-block;
+	position: relative;
+	top: -25px;
+}
+
+.key {
+	background: url(../img/keys-sprite.png) no-repeat;
+	width: 57px;
+	height: 57px;
+	display: inline-block;
+	position: relative;
+	margin: 0 6px;
+}
+
+.key-a {
+	background-position: 0px 0px;
+	top: -4px;
+}
+
+.key-top {
+	background-position: -70px 0px;
+	top: -86px;
+}
+
+.key-right {
+	background-position: -140px 0px;
+	top: -44px;
+}
+
+.key-btm {
+	background-position: -210px 0px;
+	top: -24px;
+}
+
+.key-left {
+	background-position: -280px 0px;
+	top: -69px;
+}
+
+.keys {
+	/*display: none;*/
+	width: 362px;
+	margin: 200px auto;	
+}
