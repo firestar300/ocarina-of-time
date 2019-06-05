@@ -4,9 +4,23 @@
 
 		// initSounds();
 		keyPress();
+		instrument();
 	});
 
-	
+	var instrumental = '';
+	var length = 'short';
+
+	function instrument() {
+		$(document).on('click', '#instrumental a', function(e) {
+			e.preventDefault();
+
+			$('#instrumental a').removeClass('active');
+			$(this).addClass('active');
+
+			instrumental = $(this).attr('data-instrument');
+			length = $(this).attr('data-length');
+		});
+	}
 
 	function keyPress() {
 		var keys = [37, 38, 39, 40, 68, 81, 83, 90, 65];
@@ -14,6 +28,7 @@
 		var n = 0;
 
 		$(document).keydown(function (e) {
+			e.preventDefault();
 			var random = Math.floor((Math.random() * 1000) + 1);
 			if(isInArray(e.keyCode, keys) === true) {
 				n++;
@@ -44,16 +59,17 @@
 					key = 'a';
 					$('.writing').append('<div class="key key-' + key + '"></div>');
 				}
-				
+
 				initSounds(key, random);
 			}
 		});
 
-		$(document).on('click', '#keys a', function() {
+		$(document).on('click', '#keys a', function(e) {
+			e.preventDefault();
 			var random = Math.floor((Math.random() * 1000) + 1);
 			var href = $(this).attr('href');
 			var key = href.substring(1);
-			
+
 			n++;
 			if(n === 9) {
 				n = 1;
@@ -67,7 +83,7 @@
 	}
 
 	function initSounds(key, random) {
-		$('.audio').append('<audio class="' + key + random + '"><source class="mp3" src="sounds/' + key + '_short.mp3"><source class="ogg" src="sounds/' + key + '_short.ogg"></audio>');
+		$('.audio').append('<audio class="' + key + random + '"><source class="mp3" src="sounds/' + instrumental + key + '_'+ length +'.mp3"><source class="ogg" src="sounds/' + instrumental + key + '_' + length + '.ogg"></audio>');
 
 		$('audio.' + key + random)[0].load();
 		$('audio.' + key + random)[0].play();

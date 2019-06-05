@@ -1,8 +1,23 @@
+body {
+	background: url(../img/main-bg.png);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.bg-filter {
+	background: rgba(0, 0, 0, 1);
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
 .writing {
 	background: url(../img/table-notes.png) repeat-x;
 	width: 700px;
 	margin: 200px auto;
-	height: 95px;	
+	height: 95px;
 }
 
 .symbol {
@@ -51,5 +66,22 @@
 .keys {
 	/*display: none;*/
 	width: 362px;
-	margin: 200px auto;	
+	margin: 200px auto;
+}
+
+.instrumental {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 10px 0;
+}
+
+.instrumental a {
+	opacity: .6;
+}
+
+.instrumental a.active {
+	opacity: 1;
 }
